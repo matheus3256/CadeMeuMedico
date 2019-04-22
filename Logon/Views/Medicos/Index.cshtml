@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Logon.Models.Medicos>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@if (User.Identity.IsAuthenticated)
+{
+    <p>
+        @Html.ActionLink("Adcionar Novo Medico", "Adicionar")
+    </p>
+}
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cidade.Cidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Especialidade.Especialidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CRM)
+            </th>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <th>
+                    @Html.DisplayNameFor(model => model.Endereco)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Bairro)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+            }
+            <th>
+                @Html.DisplayNameFor(model => model.WebSiteBlog)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cidade.Cidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Especialidade.Especialidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CRM)
+                </td>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Endereco)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Bairro)
+                    </td>
+                }
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                }
+                <td>
+                    @Html.DisplayFor(modelItem => item.WebSiteBlog)
+                </td>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <td>
+                        @Html.ActionLink("Editar", "Editar", new { id = item.ID }) |
+                        @Html.ActionLink("Excluir", "Excluir", new { id = item.ID })
+                    </td>
+                }
+            </tr>
+        }
+
+    </table>

@@ -6,12 +6,14 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using teste.DAO;
+using teste.Models;
 
 namespace teste.Controllers
 {
     public class CidadesController : Controller
     {
-        private TrabalhoEntities db = new TrabalhoEntities();
+        private UsuariosContext db = new UsuariosContext();
         public ActionResult Index()
         {
             return View(db.Cidades.ToList());
@@ -21,11 +23,11 @@ namespace teste.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Adicionar(Cidades cidades1)
+        public ActionResult Adicionar(Cidades cidades)
         {
             if (ModelState.IsValid)
             {
-                db.Cidades.Add(cidades1);
+                db.Cidades.Add(cidades);
                 db.SaveChanges();
                 return RedirectToAction("Index");
 

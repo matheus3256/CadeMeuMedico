@@ -77,3 +77,12 @@ C:\Users\dimov\source\repos\teste\teste\obj\Debug\teste.csproj.CopyComplete
 C:\Users\dimov\source\repos\teste\teste\obj\Debug\teste.dll
 C:\Users\dimov\source\repos\teste\teste\obj\Debug\teste.pdb
 C:\Users\dimov\source\repos\teste\teste\obj\Debug\teste.csprojAssemblyReference.cache
+C:\Users\dimov\source\repos\teste\teste\bin\Microsoft.Owin.dll
+C:\Users\dimov\source\repos\teste\teste\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\dimov\source\repos\teste\teste\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\dimov\source\repos\teste\teste\bin\Microsoft.Owin.Security.dll
+C:\Users\dimov\source\repos\teste\teste\bin\Owin.dll
+C:\Users\dimov\source\repos\teste\teste\bin\Microsoft.Owin.xml
+C:\Users\dimov\source\repos\teste\teste\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\dimov\source\repos\teste\teste\bin\Microsoft.Owin.Security.xml
+C:\Users\dimov\source\repos\teste\teste\bin\Microsoft.Owin.Security.Cookies.xml

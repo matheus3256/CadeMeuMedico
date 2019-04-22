@@ -5,16 +5,18 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using teste.DAO;
+using teste.Models;
 
 namespace teste.Controllers
 {
     public class MedicosController : Controller
     {
-        private TrabalhoEntities db = new TrabalhoEntities();
+        private UsuariosContext db = new UsuariosContext();
         public ActionResult Index()
         {
-            var medico1 = db.Medicos.Include(m => m.Cidades)
-                .Include(m => m.Especialidades).ToList();
+            var medico1 = db.Medicos.Include(m => m.Cidade)
+                .Include(m => m.Especialidade).ToList();
             return View(medico1);
         }
         public ActionResult Adicionar()
@@ -34,7 +36,7 @@ namespace teste.Controllers
 
             }
             ViewBag.IDCidade = new SelectList(db.Cidades, "IDCidade", "Cidade", medico1.IDCidade);
-            ViewBag.IDEspecialidades = new SelectList(db.Especialidades, "IDEspecialidades" , "Especialidade", medico1.IDEspecialidades);
+            ViewBag.IDEspecialidades = new SelectList(db.Especialidades, "IDEspecialidades" , "Especialidade", medico1.IDEspecialidade);
             return View();
 
         }
@@ -50,7 +52,7 @@ namespace teste.Controllers
                 return HttpNotFound();
             }
             ViewBag.IDCidade = new SelectList(db.Cidades, "IDCidade", "Cidade", medico1.IDCidade);
-            ViewBag.IDEspecialidades = new SelectList(db.Especialidades, "IDEspecialidades", "Especialidade", medico1.IDEspecialidades);
+            ViewBag.IDEspecialidades = new SelectList(db.Especialidades, "IDEspecialidades", "Especialidade", medico1.IDEspecialidade);
             return View(medico1); // retorna os dados no edit
         }
 
@@ -66,7 +68,7 @@ namespace teste.Controllers
             }
 
             ViewBag.IDCidades = new SelectList(db.Cidades, "IDCidade", "Cidade", medico1.IDCidade);
-            ViewBag.IDEspecialidades = new SelectList(db.Especialidades, "IDEspecialidades", "Especialidade", medico1.IDEspecialidades);
+            ViewBag.IDEspecialidades = new SelectList(db.Especialidades, "IDEspecialidades", "Especialidade", medico1.IDEspecialidade);
             return View();
 
         }

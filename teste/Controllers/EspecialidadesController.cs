@@ -6,12 +6,14 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using teste.DAO;
+using teste.Models;
 
 namespace teste.Controllers
 {
     public class EspecialidadesController : Controller
     {
-        private TrabalhoEntities db = new TrabalhoEntities();
+        private UsuariosContext db = new UsuariosContext();
         public ActionResult Index()
         {
             return View(db.Especialidades.ToList());

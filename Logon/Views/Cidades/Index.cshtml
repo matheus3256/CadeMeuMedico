@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Logon.Models.Cidades>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Adicionar ", "Adicionar")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado.Estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cidade)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado.Estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cidade)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Editar", new { id=item.ID }) |
+            @Html.ActionLink("Excluir", "Excluir", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,88 @@
+﻿@model Logon.Models.Medicos
+
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<h2>Excluir</h2>
+
+<h3>Voce realmente quer apagar esse registro?</h3>
+<div>
+    <h4>Medicos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cidade.Cidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cidade.Cidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Especialidade.Especialidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Especialidade.Especialidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CRM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CRM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Endereco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Endereco)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bairro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bairro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WebSiteBlog)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WebSiteBlog)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
